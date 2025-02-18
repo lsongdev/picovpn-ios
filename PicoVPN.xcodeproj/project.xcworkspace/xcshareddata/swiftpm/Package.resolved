@@ -1,0 +1,33 @@
+{
+  "originHash" : "2a96f5e549e6baba6bceaa5074f4bc95ea47031bed2e7dc431414c95242fdbbb",
+  "pins" : [
+    {
+      "identity" : "codescanner",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/twostraws/CodeScanner",
+      "state" : {
+        "revision" : "5e886430238944c7200fc9e10dbf2d9550dba865",
+        "version" : "2.5.2"
+      }
+    },
+    {
+      "identity" : "swift-uix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lsongdev/swift-uix.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "797851509ec0a81901d8c07f5dd29dd11e074618"
+      }
+    },
+    {
+      "identity" : "tun2sockskit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EbrahimTahernejad/Tun2SocksKit",
+      "state" : {
+        "revision" : "e8536afffc8c74f83cfb785d775d7d00dae64a05",
+        "version" : "4.8.0"
+      }
+    }
+  ],
+  "version" : 3
+}
