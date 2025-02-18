@@ -1,0 +1,976 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 70;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9704E7732D66F598000B6F86 /* Outbound+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9704E7722D66F591000B6F86 /* Outbound+HTTP.swift */; };
+		9704E7752D673980000B6F86 /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9704E7742D67397E000B6F86 /* MetricsView.swift */; };
+		9704E7772D674E0A000B6F86 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9704E7762D674E0A000B6F86 /* NetworkView.swift */; };
+		970C3F962D41EE5A00F1E048 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3F952D41EE5A00F1E048 /* Config.swift */; };
+		970C3F982D41EF5200F1E048 /* Outbound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3F972D41EF5200F1E048 /* Outbound.swift */; };
+		970C3F9A2D41EFB900F1E048 /* Outbound+VLESS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3F992D41EFB900F1E048 /* Outbound+VLESS.swift */; };
+		970C3F9C2D41EFD900F1E048 /* Outbound+Trojan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3F9B2D41EFD900F1E048 /* Outbound+Trojan.swift */; };
+		970C3F9E2D41F18900F1E048 /* Inbound+VLESS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3F9D2D41F18900F1E048 /* Inbound+VLESS.swift */; };
+		970C3FA02D41F1A200F1E048 /* Inbound+Trojan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3F9F2D41F1A200F1E048 /* Inbound+Trojan.swift */; };
+		970C3FA22D41F60700F1E048 /* Inbound+Socks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3FA12D41F60700F1E048 /* Inbound+Socks.swift */; };
+		970C3FA42D41F89800F1E048 /* Outbound+VMess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3FA32D41F88D00F1E048 /* Outbound+VMess.swift */; };
+		970C3FA62D41FA4800F1E048 /* Outbound+Shadowsocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3FA52D41FA4800F1E048 /* Outbound+Shadowsocks.swift */; };
+		970C3FA82D41FF1400F1E048 /* Outbound+Socks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3FA72D41FF1400F1E048 /* Outbound+Socks.swift */; };
+		970C3FAF2D4241E100F1E048 /* InboundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3FAE2D4241DB00F1E048 /* InboundView.swift */; };
+		970C3FB12D42494F00F1E048 /* Outbound+Freedom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3FB02D42494F00F1E048 /* Outbound+Freedom.swift */; };
+		970C3FB32D42499B00F1E048 /* Outbound+Blackhole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C3FB22D42499B00F1E048 /* Outbound+Blackhole.swift */; };
+		97135B892D42614300EBD846 /* BalancerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97135B882D42614300EBD846 /* BalancerView.swift */; };
+		97135B8B2D4266D600EBD846 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97135B8A2D4266D100EBD846 /* SettingsView.swift */; };
+		97135B8D2D42683800EBD846 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97135B8C2D42683800EBD846 /* AboutView.swift */; };
+		971BCB912D3974950050B7A2 /* Tun2SocksKit in Frameworks */ = {isa = PBXBuildFile; productRef = 971BCB902D3974950050B7A2 /* Tun2SocksKit */; };
+		971BCB932D3974950050B7A2 /* Tun2SocksKitC in Frameworks */ = {isa = PBXBuildFile; productRef = 971BCB922D3974950050B7A2 /* Tun2SocksKitC */; };
+		971F00192D55ECD000DC06D7 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971F00182D55ECD000DC06D7 /* GeneralView.swift */; };
+		9725B6332D40CB330093F66C /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725B6322D40CB330093F66C /* Routing.swift */; };
+		9725B63D2D423D120093F66C /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725B63C2D423D120093F66C /* ImportView.swift */; };
+		973F95962D5A408000D59EAF /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F95952D5A408000D59EAF /* QRCodeView.swift */; };
+		973F95A12D5A4A6000D59EAF /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 973F95A02D5A4A6000D59EAF /* CodeScanner */; };
+		974CB5672D59E7F600D0D25B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 974CB5662D59E7E800D0D25B /* libresolv.tbd */; };
+		97602A682CA3AFCF0068585D /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97602A672CA3AFCF0068585D /* NetworkExtension.framework */; };
+		97602A702CA3AFCF0068585D /* PicoTunnelExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 97602A652CA3AFCF0068585D /* PicoTunnelExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		976B47B12D5DC8F700D745BA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B47B02D5DC8F700D745BA /* WelcomeView.swift */; };
+		977C47172D54C4EE001F3F7B /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C47162D54C4EE001F3F7B /* LogView.swift */; };
+		977C47192D54D54A001F3F7B /* DNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C47182D54D546001F3F7B /* DNS.swift */; };
+		977C471D2D54D758001F3F7B /* DNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C471C2D54D758001F3F7B /* DNSView.swift */; };
+		977FAA052D3A16230006552A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977FAA042D3A16230006552A /* Common.swift */; };
+		977FAA092D3A17030006552A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977FAA042D3A16230006552A /* Common.swift */; };
+		9785156A2D79601E003CEF6B /* Xray.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 978515692D79601E003CEF6B /* Xray.xcframework */; };
+		978E87802D682B32007D2DBE /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978E877F2D682B32007D2DBE /* Metrics.swift */; };
+		978E87832D682D40007D2DBE /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978E877F2D682B32007D2DBE /* Metrics.swift */; };
+		97A141E92D635B6A00E1A697 /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A141E82D635B6A00E1A697 /* Dataset.swift */; };
+		97A522412D3E7B4F00015059 /* Inbound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A522402D3E7B4F00015059 /* Inbound.swift */; };
+		97A522432D3E7B7400015059 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A522422D3E7B7400015059 /* Profile.swift */; };
+		97A522452D3E7B9D00015059 /* PicoAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A522442D3E7B9D00015059 /* PicoAppManager.swift */; };
+		97A522482D3E7C1B00015059 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A522472D3E7C1B00015059 /* MainView.swift */; };
+		97A5224E2D3E7C5E00015059 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A5224D2D3E7C5E00015059 /* ProfileView.swift */; };
+		97A522502D3E7C6A00015059 /* RuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A5224F2D3E7C6A00015059 /* RuleView.swift */; };
+		97A522522D3E7C7900015059 /* OutboundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A522512D3E7C7900015059 /* OutboundView.swift */; };
+		97C677992D5CCECC004B9E08 /* LogViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C677982D5CCECC004B9E08 /* LogViewer.swift */; };
+		97D11A332D5C4D3D006CF828 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 974CB5662D59E7E800D0D25B /* libresolv.tbd */; };
+		97D11A352D5C535C006CF828 /* Inbound+Dokodemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D11A342D5C535C006CF828 /* Inbound+Dokodemo.swift */; };
+		97D11A372D5C58C5006CF828 /* Inbound+HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D11A362D5C58C5006CF828 /* Inbound+HTTP.swift */; };
+		97D18D2E2D68221C008197B1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B2CC862D681ED000059586 /* WidgetKit.framework */; };
+		97D18D2F2D68221C008197B1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B2CC882D681ED000059586 /* SwiftUI.framework */; };
+		97D18D402D68221E008197B1 /* PicoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 97D18D2D2D68221C008197B1 /* PicoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		97DA8FE92D5EF62F00BD5D37 /* PolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DA8FE82D5EF62F00BD5D37 /* PolicyView.swift */; };
+		97DC74D72CA28BBF005BF0E8 /* PicoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DC74D62CA28BBF005BF0E8 /* PicoApp.swift */; };
+		97DC74DB2CA28BC0005BF0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97DC74DA2CA28BC0005BF0E8 /* Assets.xcassets */; };
+		97EA924F2D41383600C4C397 /* DatasetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EA924E2D41383000C4C397 /* DatasetsView.swift */; };
+		97EEE6FC2D68690800C4522B /* OnDemandRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EEE6FB2D68690800C4522B /* OnDemandRule.swift */; };
+		97F9DA582D7A9B8800DF72A2 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 97F9DA572D7A9B8800DF72A2 /* SwiftUIX */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		97602A6E2CA3AFCF0068585D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97DC74CB2CA28BBF005BF0E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97602A642CA3AFCF0068585D;
+			remoteInfo = Extension;
+		};
+		97D18D3E2D68221E008197B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97DC74CB2CA28BBF005BF0E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97D18D2C2D68221C008197B1;
+			remoteInfo = PicoWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		97602A712CA3AFCF0068585D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				97602A702CA3AFCF0068585D /* PicoTunnelExtension.appex in Embed Foundation Extensions */,
+				97D18D402D68221E008197B1 /* PicoWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97A141E42D6356E200E1A697 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97A141E72D6356F500E1A697 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9704E7722D66F591000B6F86 /* Outbound+HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outbound+HTTP.swift"; sourceTree = "<group>"; };
+		9704E7742D67397E000B6F86 /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
+		9704E7762D674E0A000B6F86 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
+		970C3F952D41EE5A00F1E048 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		970C3F972D41EF5200F1E048 /* Outbound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outbound.swift; sourceTree = "<group>"; };
+		970C3F992D41EFB900F1E048 /* Outbound+VLESS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outbound+VLESS.swift"; sourceTree = "<group>"; };
+		970C3F9B2D41EFD900F1E048 /* Outbound+Trojan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outbound+Trojan.swift"; sourceTree = "<group>"; };
+		970C3F9D2D41F18900F1E048 /* Inbound+VLESS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inbound+VLESS.swift"; sourceTree = "<group>"; };
+		970C3F9F2D41F1A200F1E048 /* Inbound+Trojan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inbound+Trojan.swift"; sourceTree = "<group>"; };
+		970C3FA12D41F60700F1E048 /* Inbound+Socks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inbound+Socks.swift"; sourceTree = "<group>"; };
+		970C3FA32D41F88D00F1E048 /* Outbound+VMess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outbound+VMess.swift"; sourceTree = "<group>"; };
+		970C3FA52D41FA4800F1E048 /* Outbound+Shadowsocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outbound+Shadowsocks.swift"; sourceTree = "<group>"; };
+		970C3FA72D41FF1400F1E048 /* Outbound+Socks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outbound+Socks.swift"; sourceTree = "<group>"; };
+		970C3FAE2D4241DB00F1E048 /* InboundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundView.swift; sourceTree = "<group>"; };
+		970C3FB02D42494F00F1E048 /* Outbound+Freedom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outbound+Freedom.swift"; sourceTree = "<group>"; };
+		970C3FB22D42499B00F1E048 /* Outbound+Blackhole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outbound+Blackhole.swift"; sourceTree = "<group>"; };
+		97135B882D42614300EBD846 /* BalancerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancerView.swift; sourceTree = "<group>"; };
+		97135B8A2D4266D100EBD846 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		97135B8C2D42683800EBD846 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		971F00182D55ECD000DC06D7 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
+		9725B6322D40CB330093F66C /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		9725B63C2D423D120093F66C /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
+		973F95952D5A408000D59EAF /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		974CB5662D59E7E800D0D25B /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		97602A652CA3AFCF0068585D /* PicoTunnelExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PicoTunnelExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		97602A672CA3AFCF0068585D /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		976B47B02D5DC8F700D745BA /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		977C47162D54C4EE001F3F7B /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		977C47182D54D546001F3F7B /* DNS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNS.swift; sourceTree = "<group>"; };
+		977C471C2D54D758001F3F7B /* DNSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSView.swift; sourceTree = "<group>"; };
+		977FAA042D3A16230006552A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		977FAA0E2D3A1A9E0006552A /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		978515692D79601E003CEF6B /* Xray.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Xray.xcframework; sourceTree = "<group>"; };
+		978E877F2D682B32007D2DBE /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		97A141E82D635B6A00E1A697 /* Dataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
+		97A522402D3E7B4F00015059 /* Inbound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbound.swift; sourceTree = "<group>"; };
+		97A522422D3E7B7400015059 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		97A522442D3E7B9D00015059 /* PicoAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicoAppManager.swift; sourceTree = "<group>"; };
+		97A522472D3E7C1B00015059 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		97A5224D2D3E7C5E00015059 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		97A5224F2D3E7C6A00015059 /* RuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleView.swift; sourceTree = "<group>"; };
+		97A522512D3E7C7900015059 /* OutboundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboundView.swift; sourceTree = "<group>"; };
+		97AE08912D428C61003DF3FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97B2CC862D681ED000059586 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		97B2CC882D681ED000059586 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		97C677982D5CCECC004B9E08 /* LogViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewer.swift; sourceTree = "<group>"; };
+		97D11A342D5C535C006CF828 /* Inbound+Dokodemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inbound+Dokodemo.swift"; sourceTree = "<group>"; };
+		97D11A362D5C58C5006CF828 /* Inbound+HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inbound+HTTP.swift"; sourceTree = "<group>"; };
+		97D18D2D2D68221C008197B1 /* PicoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PicoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		97DA8FE82D5EF62F00BD5D37 /* PolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyView.swift; sourceTree = "<group>"; };
+		97DC74D32CA28BBF005BF0E8 /* PicoVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicoVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97DC74D62CA28BBF005BF0E8 /* PicoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicoApp.swift; sourceTree = "<group>"; };
+		97DC74DA2CA28BC0005BF0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97DC74E42CA28F1D005BF0E8 /* PicoVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PicoVPN.entitlements; sourceTree = "<group>"; };
+		97EA924E2D41383000C4C397 /* DatasetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasetsView.swift; sourceTree = "<group>"; };
+		97EEE6FB2D68690800C4522B /* OnDemandRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDemandRule.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		973F959E2D5A496400D59EAF /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 97602A642CA3AFCF0068585D /* PicoTunnelExtension */;
+		};
+		97D18D412D68221E008197B1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 97D18D2C2D68221C008197B1 /* PicoWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		97602A692CA3AFCF0068585D /* PicoTunnel */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (973F959E2D5A496400D59EAF /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = PicoTunnel; sourceTree = "<group>"; };
+		97D18D302D68221C008197B1 /* PicoWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (97D18D412D68221E008197B1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = PicoWidget; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97602A622CA3AFCF0068585D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				971BCB912D3974950050B7A2 /* Tun2SocksKit in Frameworks */,
+				97602A682CA3AFCF0068585D /* NetworkExtension.framework in Frameworks */,
+				97D11A332D5C4D3D006CF828 /* libresolv.tbd in Frameworks */,
+				971BCB932D3974950050B7A2 /* Tun2SocksKitC in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97D18D2A2D68221C008197B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D18D2F2D68221C008197B1 /* SwiftUI.framework in Frameworks */,
+				9785156A2D79601E003CEF6B /* Xray.xcframework in Frameworks */,
+				97D18D2E2D68221C008197B1 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97DC74D02CA28BBF005BF0E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97F9DA582D7A9B8800DF72A2 /* SwiftUIX in Frameworks */,
+				974CB5672D59E7F600D0D25B /* libresolv.tbd in Frameworks */,
+				973F95A12D5A4A6000D59EAF /* CodeScanner in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		97602A662CA3AFCF0068585D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				978515692D79601E003CEF6B /* Xray.xcframework */,
+				974CB5662D59E7E800D0D25B /* libresolv.tbd */,
+				977FAA0E2D3A1A9E0006552A /* libresolv.9.tbd */,
+				97602A672CA3AFCF0068585D /* NetworkExtension.framework */,
+				97B2CC862D681ED000059586 /* WidgetKit.framework */,
+				97B2CC882D681ED000059586 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		977FAA082D3A16B90006552A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				977FAA042D3A16230006552A /* Common.swift */,
+				977C47182D54D546001F3F7B /* DNS.swift */,
+				97A522422D3E7B7400015059 /* Profile.swift */,
+				970C3F952D41EE5A00F1E048 /* Config.swift */,
+				978E877F2D682B32007D2DBE /* Metrics.swift */,
+				97A141E82D635B6A00E1A697 /* Dataset.swift */,
+				9725B6322D40CB330093F66C /* Routing.swift */,
+				97A522402D3E7B4F00015059 /* Inbound.swift */,
+				970C3FA12D41F60700F1E048 /* Inbound+Socks.swift */,
+				97D11A362D5C58C5006CF828 /* Inbound+HTTP.swift */,
+				970C3F9F2D41F1A200F1E048 /* Inbound+Trojan.swift */,
+				970C3F9D2D41F18900F1E048 /* Inbound+VLESS.swift */,
+				97D11A342D5C535C006CF828 /* Inbound+Dokodemo.swift */,
+				970C3F972D41EF5200F1E048 /* Outbound.swift */,
+				9704E7722D66F591000B6F86 /* Outbound+HTTP.swift */,
+				970C3FB02D42494F00F1E048 /* Outbound+Freedom.swift */,
+				970C3FB22D42499B00F1E048 /* Outbound+Blackhole.swift */,
+				970C3FA72D41FF1400F1E048 /* Outbound+Socks.swift */,
+				970C3F9B2D41EFD900F1E048 /* Outbound+Trojan.swift */,
+				970C3F992D41EFB900F1E048 /* Outbound+VLESS.swift */,
+				970C3FA32D41F88D00F1E048 /* Outbound+VMess.swift */,
+				970C3FA52D41FA4800F1E048 /* Outbound+Shadowsocks.swift */,
+				97EEE6FB2D68690800C4522B /* OnDemandRule.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		97A522462D3E7BFB00015059 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				977C47162D54C4EE001F3F7B /* LogView.swift */,
+				97C677982D5CCECC004B9E08 /* LogViewer.swift */,
+				977C471C2D54D758001F3F7B /* DNSView.swift */,
+				97A5224F2D3E7C6A00015059 /* RuleView.swift */,
+				97A522472D3E7C1B00015059 /* MainView.swift */,
+				97DA8FE82D5EF62F00BD5D37 /* PolicyView.swift */,
+				97135B8C2D42683800EBD846 /* AboutView.swift */,
+				97A5224D2D3E7C5E00015059 /* ProfileView.swift */,
+				9725B63C2D423D120093F66C /* ImportView.swift */,
+				9704E7742D67397E000B6F86 /* MetricsView.swift */,
+				97135B8A2D4266D100EBD846 /* SettingsView.swift */,
+				97EA924E2D41383000C4C397 /* DatasetsView.swift */,
+				97135B882D42614300EBD846 /* BalancerView.swift */,
+				970C3FAE2D4241DB00F1E048 /* InboundView.swift */,
+				97A522512D3E7C7900015059 /* OutboundView.swift */,
+				973F95952D5A408000D59EAF /* QRCodeView.swift */,
+				976B47B02D5DC8F700D745BA /* WelcomeView.swift */,
+				971F00182D55ECD000DC06D7 /* GeneralView.swift */,
+				9704E7762D674E0A000B6F86 /* NetworkView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		97DC74CA2CA28BBF005BF0E8 = {
+			isa = PBXGroup;
+			children = (
+				977FAA082D3A16B90006552A /* Common */,
+				97DC74D52CA28BBF005BF0E8 /* PicoVPN */,
+				97602A692CA3AFCF0068585D /* PicoTunnel */,
+				97D18D302D68221C008197B1 /* PicoWidget */,
+				97602A662CA3AFCF0068585D /* Frameworks */,
+				97DC74D42CA28BBF005BF0E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		97DC74D42CA28BBF005BF0E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97DC74D32CA28BBF005BF0E8 /* PicoVPN.app */,
+				97602A652CA3AFCF0068585D /* PicoTunnelExtension.appex */,
+				97D18D2D2D68221C008197B1 /* PicoWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97DC74D52CA28BBF005BF0E8 /* PicoVPN */ = {
+			isa = PBXGroup;
+			children = (
+				97A522462D3E7BFB00015059 /* Views */,
+				97DC74E42CA28F1D005BF0E8 /* PicoVPN.entitlements */,
+				97DC74D62CA28BBF005BF0E8 /* PicoApp.swift */,
+				97A522442D3E7B9D00015059 /* PicoAppManager.swift */,
+				97DC74DA2CA28BC0005BF0E8 /* Assets.xcassets */,
+				97AE08912D428C61003DF3FE /* Info.plist */,
+			);
+			path = PicoVPN;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97602A642CA3AFCF0068585D /* PicoTunnelExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97602A752CA3AFCF0068585D /* Build configuration list for PBXNativeTarget "PicoTunnelExtension" */;
+			buildPhases = (
+				97602A612CA3AFCF0068585D /* Sources */,
+				97602A622CA3AFCF0068585D /* Frameworks */,
+				97602A632CA3AFCF0068585D /* Resources */,
+				97A141E72D6356F500E1A697 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				97602A692CA3AFCF0068585D /* PicoTunnel */,
+			);
+			name = PicoTunnelExtension;
+			packageProductDependencies = (
+				971BCB902D3974950050B7A2 /* Tun2SocksKit */,
+				971BCB922D3974950050B7A2 /* Tun2SocksKitC */,
+			);
+			productName = Extension;
+			productReference = 97602A652CA3AFCF0068585D /* PicoTunnelExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		97D18D2C2D68221C008197B1 /* PicoWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97D18D422D68221E008197B1 /* Build configuration list for PBXNativeTarget "PicoWidgetExtension" */;
+			buildPhases = (
+				97D18D292D68221C008197B1 /* Sources */,
+				97D18D2A2D68221C008197B1 /* Frameworks */,
+				97D18D2B2D68221C008197B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				97D18D302D68221C008197B1 /* PicoWidget */,
+			);
+			name = PicoWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = PicoWidgetExtension;
+			productReference = 97D18D2D2D68221C008197B1 /* PicoWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		97DC74D22CA28BBF005BF0E8 /* PicoVPN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97DC74E12CA28BC0005BF0E8 /* Build configuration list for PBXNativeTarget "PicoVPN" */;
+			buildPhases = (
+				97DC74CF2CA28BBF005BF0E8 /* Sources */,
+				97DC74D02CA28BBF005BF0E8 /* Frameworks */,
+				97DC74D12CA28BBF005BF0E8 /* Resources */,
+				97602A712CA3AFCF0068585D /* Embed Foundation Extensions */,
+				97A141E42D6356E200E1A697 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97602A6F2CA3AFCF0068585D /* PBXTargetDependency */,
+				97D18D3F2D68221E008197B1 /* PBXTargetDependency */,
+			);
+			name = PicoVPN;
+			productName = PicoVPN;
+			productReference = 97DC74D32CA28BBF005BF0E8 /* PicoVPN.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97DC74CB2CA28BBF005BF0E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					97602A642CA3AFCF0068585D = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					97D18D2C2D68221C008197B1 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					97DC74D22CA28BBF005BF0E8 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 97DC74CE2CA28BBF005BF0E8 /* Build configuration list for PBXProject "PicoVPN" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 97DC74CA2CA28BBF005BF0E8;
+			packageReferences = (
+				971BCB8F2D3972810050B7A2 /* XCRemoteSwiftPackageReference "Tun2SocksKit" */,
+				973F959F2D5A49E000D59EAF /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				97F9DA562D7A9B8800DF72A2 /* XCRemoteSwiftPackageReference "swift-uix" */,
+			);
+			productRefGroup = 97DC74D42CA28BBF005BF0E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97DC74D22CA28BBF005BF0E8 /* PicoVPN */,
+				97602A642CA3AFCF0068585D /* PicoTunnelExtension */,
+				97D18D2C2D68221C008197B1 /* PicoWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97602A632CA3AFCF0068585D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97D18D2B2D68221C008197B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97DC74D12CA28BBF005BF0E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97DC74DB2CA28BC0005BF0E8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97602A612CA3AFCF0068585D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				977FAA092D3A17030006552A /* Common.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97D18D292D68221C008197B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				978E87832D682D40007D2DBE /* Metrics.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97DC74CF2CA28BBF005BF0E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97135B8D2D42683800EBD846 /* AboutView.swift in Sources */,
+				97A522412D3E7B4F00015059 /* Inbound.swift in Sources */,
+				97D11A352D5C535C006CF828 /* Inbound+Dokodemo.swift in Sources */,
+				97A5224E2D3E7C5E00015059 /* ProfileView.swift in Sources */,
+				97D11A372D5C58C5006CF828 /* Inbound+HTTP.swift in Sources */,
+				976B47B12D5DC8F700D745BA /* WelcomeView.swift in Sources */,
+				9725B6332D40CB330093F66C /* Routing.swift in Sources */,
+				97C677992D5CCECC004B9E08 /* LogViewer.swift in Sources */,
+				97A522522D3E7C7900015059 /* OutboundView.swift in Sources */,
+				97DA8FE92D5EF62F00BD5D37 /* PolicyView.swift in Sources */,
+				977C47192D54D54A001F3F7B /* DNS.swift in Sources */,
+				970C3FA82D41FF1400F1E048 /* Outbound+Socks.swift in Sources */,
+				970C3FA02D41F1A200F1E048 /* Inbound+Trojan.swift in Sources */,
+				97EA924F2D41383600C4C397 /* DatasetsView.swift in Sources */,
+				97A522452D3E7B9D00015059 /* PicoAppManager.swift in Sources */,
+				973F95962D5A408000D59EAF /* QRCodeView.swift in Sources */,
+				970C3FAF2D4241E100F1E048 /* InboundView.swift in Sources */,
+				970C3FA62D41FA4800F1E048 /* Outbound+Shadowsocks.swift in Sources */,
+				97A522502D3E7C6A00015059 /* RuleView.swift in Sources */,
+				9704E7732D66F598000B6F86 /* Outbound+HTTP.swift in Sources */,
+				970C3F9A2D41EFB900F1E048 /* Outbound+VLESS.swift in Sources */,
+				970C3FB12D42494F00F1E048 /* Outbound+Freedom.swift in Sources */,
+				970C3FA22D41F60700F1E048 /* Inbound+Socks.swift in Sources */,
+				97DC74D72CA28BBF005BF0E8 /* PicoApp.swift in Sources */,
+				970C3F982D41EF5200F1E048 /* Outbound.swift in Sources */,
+				97135B892D42614300EBD846 /* BalancerView.swift in Sources */,
+				978E87802D682B32007D2DBE /* Metrics.swift in Sources */,
+				977FAA052D3A16230006552A /* Common.swift in Sources */,
+				9704E7752D673980000B6F86 /* MetricsView.swift in Sources */,
+				97A522482D3E7C1B00015059 /* MainView.swift in Sources */,
+				971F00192D55ECD000DC06D7 /* GeneralView.swift in Sources */,
+				970C3F9C2D41EFD900F1E048 /* Outbound+Trojan.swift in Sources */,
+				97EEE6FC2D68690800C4522B /* OnDemandRule.swift in Sources */,
+				970C3FA42D41F89800F1E048 /* Outbound+VMess.swift in Sources */,
+				970C3F962D41EE5A00F1E048 /* Config.swift in Sources */,
+				97A141E92D635B6A00E1A697 /* Dataset.swift in Sources */,
+				97A522432D3E7B7400015059 /* Profile.swift in Sources */,
+				9725B63D2D423D120093F66C /* ImportView.swift in Sources */,
+				970C3F9E2D41F18900F1E048 /* Inbound+VLESS.swift in Sources */,
+				9704E7772D674E0A000B6F86 /* NetworkView.swift in Sources */,
+				970C3FB32D42499B00F1E048 /* Outbound+Blackhole.swift in Sources */,
+				977C47172D54C4EE001F3F7B /* LogView.swift in Sources */,
+				977C471D2D54D758001F3F7B /* DNSView.swift in Sources */,
+				97135B8B2D4266D600EBD846 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		97602A6F2CA3AFCF0068585D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97602A642CA3AFCF0068585D /* PicoTunnelExtension */;
+			targetProxy = 97602A6E2CA3AFCF0068585D /* PBXContainerItemProxy */;
+		};
+		97D18D3F2D68221E008197B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97D18D2C2D68221C008197B1 /* PicoWidgetExtension */;
+			targetProxy = 97D18D3E2D68221E008197B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		97602A722CA3AFCF0068585D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PicoTunnel/PacketTunnel.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 2ZHWSJ25BU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PicoTunnel/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PicoTunnel;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lsong.picovpn.tunnel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97602A732CA3AFCF0068585D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PicoTunnel/PacketTunnel.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 2ZHWSJ25BU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PicoTunnel/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PicoTunnel;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lsong.picovpn.tunnel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		97D18D432D68221E008197B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = PicoWidget/PicoWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 2ZHWSJ25BU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PicoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PicoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lsong.picovpn.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97D18D442D68221E008197B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = PicoWidget/PicoWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 2ZHWSJ25BU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PicoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PicoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lsong.picovpn.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		97DC74DF2CA28BC0005BF0E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		97DC74E02CA28BC0005BF0E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		97DC74E22CA28BC0005BF0E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PicoVPN/PicoVPN.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 2ZHWSJ25BU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PicoVPN/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PicoVPN;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to access your camera to scan QR codes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to access your photos to save QR codes.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lsong.picovpn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97DC74E32CA28BC0005BF0E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PicoVPN/PicoVPN.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 2ZHWSJ25BU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PicoVPN/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PicoVPN;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to access your camera to scan QR codes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to access your photos to save QR codes.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lsong.picovpn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97602A752CA3AFCF0068585D /* Build configuration list for PBXNativeTarget "PicoTunnelExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97602A722CA3AFCF0068585D /* Debug */,
+				97602A732CA3AFCF0068585D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97D18D422D68221E008197B1 /* Build configuration list for PBXNativeTarget "PicoWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97D18D432D68221E008197B1 /* Debug */,
+				97D18D442D68221E008197B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97DC74CE2CA28BBF005BF0E8 /* Build configuration list for PBXProject "PicoVPN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97DC74DF2CA28BC0005BF0E8 /* Debug */,
+				97DC74E02CA28BC0005BF0E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97DC74E12CA28BC0005BF0E8 /* Build configuration list for PBXNativeTarget "PicoVPN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97DC74E22CA28BC0005BF0E8 /* Debug */,
+				97DC74E32CA28BC0005BF0E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		971BCB8F2D3972810050B7A2 /* XCRemoteSwiftPackageReference "Tun2SocksKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EbrahimTahernejad/Tun2SocksKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.7.6;
+			};
+		};
+		973F959F2D5A49E000D59EAF /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.2;
+			};
+		};
+		97F9DA562D7A9B8800DF72A2 /* XCRemoteSwiftPackageReference "swift-uix" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lsongdev/swift-uix.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		971BCB902D3974950050B7A2 /* Tun2SocksKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 971BCB8F2D3972810050B7A2 /* XCRemoteSwiftPackageReference "Tun2SocksKit" */;
+			productName = Tun2SocksKit;
+		};
+		971BCB922D3974950050B7A2 /* Tun2SocksKitC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 971BCB8F2D3972810050B7A2 /* XCRemoteSwiftPackageReference "Tun2SocksKit" */;
+			productName = Tun2SocksKitC;
+		};
+		973F95A02D5A4A6000D59EAF /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 973F959F2D5A49E000D59EAF /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+		97F9DA572D7A9B8800DF72A2 /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97F9DA562D7A9B8800DF72A2 /* XCRemoteSwiftPackageReference "swift-uix" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 97DC74CB2CA28BBF005BF0E8 /* Project object */;
+}
