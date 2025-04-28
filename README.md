@@ -22,6 +22,18 @@
 - Stable connection performance
 - Low memory footprint
 
+## Screenshots
+
+<table>
+<tr>
+<td><img src="screenshots/001.png" /></td>
+<td><img src="screenshots/003.png" /></td>
+<td><img src="screenshots/002.png" /></td>
+<td><img src="screenshots/004.png" /></td>
+<td><img src="screenshots/005.png" /></td>
+</tr>
+</table>
+
 ## License
 
 This project is licensed under the [GPLv3 license and specific limitations](https://github.com/lsongdev/.github/blob/main/LICENSE.md).
