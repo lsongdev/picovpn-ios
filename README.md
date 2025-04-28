@@ -25,3 +25,5 @@
 ## License
 
 This project is licensed under the [GPLv3 license and specific limitations](https://github.com/lsongdev/.github/blob/main/LICENSE.md).
+
+本项目没有在 App Store 上架, 也禁止任何人将本项目发布到 App Store, 代码仅供研究学习使用, 禁止任何未授权的商业行为。
