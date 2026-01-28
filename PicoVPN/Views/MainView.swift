@@ -92,13 +92,6 @@ struct MainView: View {
                 }
                 
             }
-            .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    Image(systemName: "bolt")
-                        .foregroundColor(.secondary)
-                        .font(.caption)
-                }
-            }
             .sheet(isPresented: $editingState.showingProfile) {
                 if let index = editingState.profileIndex {
                     ProfileView(

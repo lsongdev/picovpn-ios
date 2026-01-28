@@ -66,7 +66,7 @@ struct ProfileView: View {
                     )) {
                         VStack(alignment: .leading) {
                             Text("DNS")
-                            Text((profile.config.dns != nil) ? "\(profile.config.dns!.servers.count) servers" : "<unset>")
+                            Text((profile.config.dns != nil) ? "\(profile.config.dns!.tag), \(profile.config.dns!.servers.count) servers" : "<unset>")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
