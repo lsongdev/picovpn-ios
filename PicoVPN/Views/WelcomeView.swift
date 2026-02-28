@@ -12,6 +12,12 @@ struct WelcomeView: View {
                 
                 VStack(spacing: 12) {
                     VStack(spacing: 4) {
+                        Image(systemName: "bolt.fill")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 80, height: 80)
+                                            .foregroundColor(appManager.appTintColor.getColor())
+                                            .padding(.bottom, 4)
                         Text("Welcome to \(appManager.appName)")
                             .font(.title)
                             .fontWeight(.semibold)
@@ -84,7 +90,13 @@ struct WelcomeView: View {
                 Button {
                     Task {
                         isLoading = true
-                        await DatasetsManager.shared.updateAllDatasets()
+                        if !DatasetsManager.shared.validateRequiredDatasets() {
+                            await DatasetsManager.shared.updateAllDatasets()
+                        }
+                        let profile = Profile.direct
+                        appManager.addProfile(profile)
+                        appManager.selectProfile(profile)
+                        appManager.saveProfiles()
                         isLoading = false
                         dismiss()
                     }

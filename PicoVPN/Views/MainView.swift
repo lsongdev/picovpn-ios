@@ -131,7 +131,7 @@ struct MainView: View {
                 }
             })
             .onAppear {
-                editingState.showingWelcome = !DatasetsManager.shared.validateRequiredDatasets()
+                editingState.showingWelcome = !DatasetsManager.shared.validateRequiredDatasets() || appManager.profiles.isEmpty
                 if appManager.autoDeleteLogs {
                     LogManager.cleanupOldLogs(olderThanDays: appManager.deleteLogAfterDays)
                 }

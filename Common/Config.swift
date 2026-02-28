@@ -55,12 +55,18 @@ struct Config: Codable {
     var stats: Stats?
     var metrics: Metrics?
     var policy: Policy?
-    var routing: Routing = Routing()
+    var routing: Routing = Routing.direct
     var inbounds: [Inbound] = [Inbound.socks]
     var outbounds: [Outbound] = [
         Outbound.direct,
         Outbound.block,
     ]
+    
+    static var direct: Config {
+        var config = Config()
+        config.routing.rules = [Rule.match_all(to: "direct")]
+        return config
+    }
 }
 
 struct StreamSettings: Codable {
@@ -71,6 +77,7 @@ struct StreamSettings: Codable {
     var realitySettings: RealitySetting = RealitySetting()
     var wsSettings: WebSocketSettings = WebSocketSettings()
     var httpUpgradeSettings: HTTPUpgradeSettings = HTTPUpgradeSettings()
+    var hysteriaSettings: HysteriaSettings = HysteriaSettings()
     
     // xhttpSettings
     // kcpSettings
@@ -84,6 +91,7 @@ struct StreamSettings: Codable {
         case wsSettings
         case httpUpgradeSettings
         case realitySettings
+        case hysteriaSettings
     }
     init(){}
     init(from decoder: any Decoder) throws {
@@ -93,6 +101,7 @@ struct StreamSettings: Codable {
         if network == "tcp" { rawSettings =  try container.decode(RawSettings.self, forKey: .rawSettings) }
         if network == "raw" { rawSettings =  try container.decode(RawSettings.self, forKey: .rawSettings) }
         if network == "ws" { wsSettings = try container.decode(WebSocketSettings.self, forKey: .wsSettings) }
+        if network == "hysteria" { hysteriaSettings = try container.decode(HysteriaSettings.self, forKey: .hysteriaSettings) }
         if security == "tls" { tlsSettings = try container.decode(TLSSettings.self, forKey: .tlsSettings) }
         if security == "reality" { realitySettings = try container.decode(RealitySetting.self, forKey: .realitySettings) }
     }
@@ -103,6 +112,7 @@ struct StreamSettings: Codable {
         try container.encode(security, forKey: .security)
         if network == "raw" { try container.encode(rawSettings, forKey: .rawSettings) }
         if network == "ws" { try container.encode(wsSettings, forKey: .wsSettings) }
+        if network == "hysteria" { try container.encode(hysteriaSettings, forKey: .hysteriaSettings) }
         if network == "httpupgrade" { try container.encode(httpUpgradeSettings, forKey: .httpUpgradeSettings) }
         if security == "tls" { try container.encode(tlsSettings, forKey: .tlsSettings) }
         if security == "reality" { try container.encode(realitySettings, forKey: .realitySettings) }
@@ -110,10 +120,33 @@ struct StreamSettings: Codable {
     
 }
 
+// @docs https://xtls.github.io/config/transports/hysteria.html
+struct HysteriaSettings: Codable {
+    var version: String = "2"
+    var auth: String = ""
+    var up: String = ""
+    var down: String = ""
+//    var keepAlivePeriod: Int = 0
+//    "udphop": {
+//        "port": "1145-1919",
+//        "interval": 30
+//    },
+//    "initStreamReceiveWindow": 8388608,
+//    "maxStreamReceiveWindow": 8388608,
+//    "initConnectionReceiveWindow": 20971520,
+//    "maxConnectionReceiveWindow": 20971520,
+//    "maxIdleTimeout": 30,
+//    "keepAlivePeriod": 0,
+//    "disablePathMTUDiscovery": false
+    
+}
+
+// @docs https://xtls.github.io/config/transports/raw.html
 struct RawSettings: Codable {
     
 }
 
+// @docs https://xtls.github.io/config/transport.html#realityobject
 struct RealitySetting: Codable {
     var show: Bool = false
     var target: String = ""
@@ -130,6 +163,7 @@ struct RealitySetting: Codable {
     var spiderX: String = ""
 }
 
+// @docs https://xtls.github.io/config/transport.html#tlsobject
 struct TLSSettings: Codable {
     var serverName: String = ""
     var rejectUnknownSni: Bool = false
@@ -170,6 +204,7 @@ struct TLSSettings: Codable {
     }
 }
 
+// @docs https://xtls.github.io/config/transports/websocket.html
 struct WebSocketSettings: Codable {
     var acceptProxyProtocol: Bool? = false
     var path: String = ""
@@ -179,6 +214,7 @@ struct WebSocketSettings: Codable {
     
 }
 
+// @docs https://xtls.github.io/config/transports/httpupgrade.html
 struct HTTPUpgradeSettings: Codable {
     var acceptProxyProtocol: Bool = false
     var path: String = ""

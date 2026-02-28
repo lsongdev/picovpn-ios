@@ -3,12 +3,13 @@ import SwiftUI
 // MARK: - Profile Model
 struct Profile: Identifiable, Codable {
     var id: UUID = UUID()
-    var subscription_proxy_names: [String] = []
     var url: String = ""
     var name: String = ""
     var config: Config = Config()
     var created_at: Date = Date()
     var updated_at: Date = Date()
+    
+    var subscription_proxy_names: [String] = []
 }
 
 extension Profile {
@@ -21,5 +22,14 @@ extension Profile {
             throw URLError(.cannotParseResponse)
         }
         return try Config.parseShareLinks(content)
+    }
+}
+
+extension Profile {
+    static var direct: Profile {
+        var profile = Profile()
+        profile.name = "DIRECT"
+        profile.config = Config.direct
+        return profile
     }
 }

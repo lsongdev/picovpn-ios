@@ -13,6 +13,7 @@ enum OutboundSetting {
     case vless(OutboundVLESSSettings)
     case vmess(OutboundVMESSSettings)
     case trojan(OutboundTrojanSettings)
+    case hysteria(OutboundHysteriaSettings)
     case shadowsocks(OutboundShadowsocksSettings)
     case freedom(OutboundFreedomSettings)
     case blackhole(OutboundBlackholeSettings)    
@@ -31,6 +32,9 @@ struct Outbound: Codable {
             if newValue == "trojan" {
                 streamSettings.network = "raw"
                 streamSettings.security = "tls"
+            }
+            if newValue == "hysteria" {
+                streamSettings.network = "hysteria"
             }
             self.protocol = newValue
         }
@@ -74,6 +78,10 @@ struct Outbound: Codable {
             settings = .trojan(trojanSettings)
             streamSettings.network = "raw"
             streamSettings.security = "tls"
+        case "hysteria":
+            let hysteriaSettings = try container.decode(OutboundHysteriaSettings.self, forKey: .settings)
+            settings = .hysteria(hysteriaSettings)
+            streamSettings.network = "hysteria"
         case "freedom":
             let freedomSettings = try container.decode(OutboundFreedomSettings.self, forKey: .settings)
             settings = .freedom(freedomSettings)
@@ -104,6 +112,8 @@ struct Outbound: Codable {
         case .vmess(let settings):
             try container.encode(settings, forKey: .settings)
         case .trojan(let settings):
+            try container.encode(settings, forKey: .settings)
+        case .hysteria(let settings):
             try container.encode(settings, forKey: .settings)
         case .shadowsocks(let settings):
             try container.encode(settings, forKey: .settings)

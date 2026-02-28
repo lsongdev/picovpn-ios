@@ -33,6 +33,7 @@
 		9725B63D2D423D120093F66C /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725B63C2D423D120093F66C /* ImportView.swift */; };
 		973F95962D5A408000D59EAF /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F95952D5A408000D59EAF /* QRCodeView.swift */; };
 		973F95A12D5A4A6000D59EAF /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 973F95A02D5A4A6000D59EAF /* CodeScanner */; };
+		9741E6152F52ABBB002B496A /* Outbound+Hysteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741E6142F52ABB3002B496A /* Outbound+Hysteria.swift */; };
 		974CB5672D59E7F600D0D25B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 974CB5662D59E7E800D0D25B /* libresolv.tbd */; };
 		97602A682CA3AFCF0068585D /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97602A672CA3AFCF0068585D /* NetworkExtension.framework */; };
 		97602A702CA3AFCF0068585D /* PicoTunnelExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 97602A652CA3AFCF0068585D /* PicoTunnelExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -144,6 +145,7 @@
 		9725B6322D40CB330093F66C /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
 		9725B63C2D423D120093F66C /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
 		973F95952D5A408000D59EAF /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		9741E6142F52ABB3002B496A /* Outbound+Hysteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outbound+Hysteria.swift"; sourceTree = "<group>"; };
 		974CB5662D59E7E800D0D25B /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		97602A652CA3AFCF0068585D /* PicoTunnelExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PicoTunnelExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		97602A672CA3AFCF0068585D /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
@@ -271,8 +273,9 @@
 				970C3FB22D42499B00F1E048 /* Outbound+Blackhole.swift */,
 				970C3FA72D41FF1400F1E048 /* Outbound+Socks.swift */,
 				970C3F9B2D41EFD900F1E048 /* Outbound+Trojan.swift */,
-				970C3F992D41EFB900F1E048 /* Outbound+VLESS.swift */,
 				970C3FA32D41F88D00F1E048 /* Outbound+VMess.swift */,
+				970C3F992D41EFB900F1E048 /* Outbound+VLESS.swift */,
+				9741E6142F52ABB3002B496A /* Outbound+Hysteria.swift */,
 				970C3FA52D41FA4800F1E048 /* Outbound+Shadowsocks.swift */,
 				97EEE6FB2D68690800C4522B /* OnDemandRule.swift */,
 			);
@@ -517,6 +520,7 @@
 				970C3FA82D41FF1400F1E048 /* Outbound+Socks.swift in Sources */,
 				970C3FA02D41F1A200F1E048 /* Inbound+Trojan.swift in Sources */,
 				97EA924F2D41383600C4C397 /* DatasetsView.swift in Sources */,
+				9741E6152F52ABBB002B496A /* Outbound+Hysteria.swift in Sources */,
 				97A522452D3E7B9D00015059 /* PicoAppManager.swift in Sources */,
 				973F95962D5A408000D59EAF /* QRCodeView.swift in Sources */,
 				970C3FAF2D4241E100F1E048 /* InboundView.swift in Sources */,

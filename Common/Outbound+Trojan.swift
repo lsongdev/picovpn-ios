@@ -4,7 +4,7 @@
 //
 //  Created by Lsong on 1/23/25.
 //
-
+// @docs https://xtls.github.io/config/outbounds/trojan.html
 struct OutboundTrojanSettings: Codable {
     var servers: [OutboundTrojanServer] = []
     
@@ -22,4 +22,5 @@ struct OutboundTrojanServer: Codable {
     var address: String = ""
     var port: Int = 443
     var password: String = ""
+    var email: String? = "" // Optional
 }

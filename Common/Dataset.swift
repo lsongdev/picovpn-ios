@@ -100,9 +100,7 @@ struct GeoDataRow: Codable {
 }
 
 class DatasetsManager: ObservableObject {
-    
     static var shared: DatasetsManager = .init()
-    
     @Published var datasets: [Dataset] = []
     private let userDefaultsKey = "datasets"
     

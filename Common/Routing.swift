@@ -115,12 +115,12 @@ struct Rule: Hashable, Codable, Equatable {
         rule.outboundTag = "direct"
         return rule
     }
-    static var match_all: Rule {
+    static func match_all(to proxy: String) -> Rule {
         var rule = Rule()
         rule.ruleTag = "match-all"
         rule.port = "1-65535"
-        rule.outboundTag = "proxy"
-        rule.balancerTag = "proxy"
+        rule.outboundTag = proxy
+        rule.balancerTag = proxy
         return rule
     }
 }
@@ -130,10 +130,24 @@ struct Routing: Codable {
     var domainMatcher: String = "hybrid"
     var balancers: [Balancer] = []
     var rules: [Rule] = [
-        Rule.china_ip_direct,
-        Rule.china_domain_direct,
-        Rule.match_all
+        
     ]
+    static var direct: Routing {
+        var route = Routing()
+        route.rules = [
+            Rule.match_all(to: "direct")
+        ]
+        return route
+    }
+    static var china: Routing {
+        var route = Routing()
+        route.rules = [
+            Rule.china_ip_direct,
+            Rule.china_domain_direct,
+            Rule.match_all(to: "proxy")
+        ]
+        return route
+    }
 }
 
 struct Balancer: Codable {

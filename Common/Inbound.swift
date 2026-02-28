@@ -81,7 +81,7 @@ struct Inbound: Codable {
         var inbound = Inbound()
         inbound.port = XrayGetFreePort()
         inbound.protocol = "socks"
-        inbound.tag = "entry"
+        inbound.tag = "entry-\(inbound.port)"
         inbound.settings = .socks(InboundSocksSettings(udp: true))
         return inbound
     }

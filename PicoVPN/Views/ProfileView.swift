@@ -117,16 +117,30 @@ struct ProfileView: View {
                 }
                 
                 
-                Section(header: HStack {
-                    Text("Inbounds")
-                    Spacer()
-                    Button(action: {
-                        editingState.inboundIndex = nil
-                        editingState.showingInboundEditor = true
-                    }) {
-                        Image(systemName: "plus")
+                Section(
+                    header: HStack {
+                        Text("Inbounds")
+                        Spacer()
+                        Button(action: {
+                            editingState.inboundIndex = nil
+                            editingState.showingInboundEditor = true
+                        }) {
+                            Image(systemName: "plus")
+                        }
+                    },
+                    footer: HStack {
+                        Button {
+                            profile.config.inbounds.append(Inbound.socks)
+                        } label: {
+                            textLink("socks", systemImage: "arrow.up.right")
+                        }
+                        Button {
+                            profile.config.inbounds.append(Inbound.dokodemo)
+                        } label: {
+                            textLink("dokodemo", systemImage: "arrow.up.right")
+                        }
                     }
-                }) {
+                ) {
                     ForEach(profile.config.inbounds.indices, id: \.self) { index in
                         inboundRow(for: profile.config.inbounds[index], at: index)
                     }
@@ -162,7 +176,7 @@ struct ProfileView: View {
                 }
                 
                 
-                Section (header: Text("Routing")) {
+                Section ("Routing") {
                     Picker("Domain Strategy", selection: $profile.config.routing.domainStrategy) {
                         Text("AsIs").tag("AsIs")
                         Text("IPIfNonMatch").tag("IPIfNonMatch")
@@ -175,16 +189,36 @@ struct ProfileView: View {
                     }
                 }
                 
-                Section(header: HStack {
-                    Text("Rules")
-                    Spacer()
-                    Button(action: {
-                        editingState.ruleIndex = nil
-                        editingState.showingRuleEditor = true
-                    }) {
-                        Image(systemName: "plus")
+                Section(
+                    header: HStack {
+                        Text("Rules")
+                        Spacer()
+                        Button(action: {
+                            editingState.ruleIndex = nil
+                            editingState.showingRuleEditor = true
+                        }) {
+                            Image(systemName: "plus")
+                        }
+                    },
+                    footer: HStack {
+                        Button {
+                            if !profile.config.routing.rules.contains(where: { $0.ruleTag == "match-all" && $0.outboundTag == "direct" }) {
+                                profile.config.routing.rules.append(Rule.match_all(to: "direct"))
+                            }
+                        } label: {
+                            textLink("direct", systemImage: "arrow.up.right")
+                        }
+                        Button {
+                            if !profile.config.routing.rules.contains(where: { $0.ruleTag == Rule.china_ip_direct.ruleTag }) {
+                                profile.config.routing.rules.insert(Rule.china_ip_direct, at: 0)
+                            }
+                            if !profile.config.routing.rules.contains(where: { $0.ruleTag == Rule.china_domain_direct.ruleTag }) {
+                                profile.config.routing.rules.insert(Rule.china_domain_direct, at: 1)
+                            }
+                        } label: {
+                            textLink("cn-direct", systemImage: "arrow.up.right")
+                        }
                     }
-                }
                 ) {
                     ForEach(profile.config.routing.rules.indices, id: \.self) { index in
                         ruleRow(for: profile.config.routing.rules[index], at: index)
@@ -361,6 +395,15 @@ struct ProfileView: View {
                 document: try! JSONEncoder().encode(profile.config),
                 filename: "picovpn-\(profile.name).json"
             )
+        }
+    }
+    
+    func textLink(_ text: String, systemImage: String) -> some View {
+        HStack {
+            Text(text)
+            Image(systemName: systemImage)
+                .resizable()
+                .frame(width: 8, height: 8)
         }
     }
     

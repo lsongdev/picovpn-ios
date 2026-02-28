@@ -13,9 +13,9 @@ let fingerprints = [
     "random",
     "randomized",
 ]
-let protocols = [ "vmess", "vless", "trojan", "shadowsocks", "http", "socks", "freedom", "blackhole"]
+let protocols = [ "vmess", "vless", "trojan", "hysteria", "shadowsocks", "http", "socks", "freedom", "blackhole"]
 let securityTypes = ["none", "tls", "reality"]
-let networkTypes = [ "raw", "xhttp", "kcp", "grpc", "ws", "httpupgrade" ]
+let networkTypes = [ "raw", "xhttp", "kcp", "grpc", "ws", "httpupgrade", "hysteria" ]
 let supportedMethods = [
     "shadowsocks": [
         "2022-blake3-aes-128-gcm",
@@ -86,6 +86,9 @@ struct OutboundView: View {
             _address = State(initialValue: settings.servers.first!.address)
             _port = State(initialValue: settings.servers.first!.port)
             _password = State(initialValue: settings.servers.first!.password)
+        case .hysteria(let settings):
+            _address = State(initialValue: settings.address)
+            _port = State(initialValue: settings.port)
         case .shadowsocks(let settings):
             _address = State(initialValue: settings.servers.first!.address)
             _port = State(initialValue: settings.servers.first!.port)
@@ -147,6 +150,11 @@ struct OutboundView: View {
                     if proxy.streamSettings.network == "httpupgrade" {
                         InputField("Host", text: $proxy.streamSettings.httpUpgradeSettings.host)
                         InputField("Path", text: $proxy.streamSettings.httpUpgradeSettings.path)
+                    }
+                    if proxy.streamSettings.network == "hysteria" {
+                        InputField("Auth", text: $proxy.streamSettings.hysteriaSettings.auth)
+                        InputField("Upload limit", text: $proxy.streamSettings.hysteriaSettings.up)
+                        InputField("Download limit", text: $proxy.streamSettings.hysteriaSettings.down)
                     }
                 }
                 
@@ -255,6 +263,8 @@ struct OutboundView: View {
                 proxy.settings = OutboundSetting.vless(OutboundVLESSSettings(host: address, port: port, user: username, encryption: encryption))
             case "trojan":
                 proxy.settings = OutboundSetting.trojan(OutboundTrojanSettings(host: address, port: port, password: password))
+            case "hysteria":
+                proxy.settings = OutboundSetting.hysteria(OutboundHysteriaSettings(address: address, port: port))
             case "shadowsocks":
                 proxy.settings = OutboundSetting.shadowsocks(OutboundShadowsocksSettings(host: address, port: port, pass: password, method: encryption))
             case "blackhole":
